@@ -41,7 +41,7 @@ public class Server extends Monitoring{
         try(Connection c = getConnection(); PreparedStatement ps = c.prepareStatement(DATA_DESC)){
 
             Monitoring monitoring = new Monitoring();
-            if(client.getUrlStatus().equals("OK")) {
+            if(client.getUrlStatus()=="OK") {
                 ps.setTime(1, java.sql.Time.valueOf(LocalTime.now()));
                 ps.setInt(2, client.getHTTPResponseCode(client));
                 ps.setString(3, client.getHTTPResponseLine());

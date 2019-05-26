@@ -1,20 +1,28 @@
 package dataAccessObject;
 
 
+import domain.Client;
 import org.junit.Test;
 
 public class ServerTest {
 
-
     @Test
-    public void getConnection(){
+    public void addClient(){
+        Server server = new Server();
+        server.saveDescriptionToDB(saveClient());
     }
 
-    @Test
-    public void saveInformationToDB() {
+    public Client saveClient() {
+        Client client = new Client();
+        client.setURL("localhost:8080");
+        return client;
     }
 
-    @Test
-    public void saveDescriptionToDB() {
-    }
+//    public Client saveClient404() {
+//        Client client = new Client();
+//        client.setURL("localhost:1111");
+//        return client;
+//    }
+
+
 }
